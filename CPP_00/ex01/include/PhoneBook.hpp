@@ -6,14 +6,14 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:12:10 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/04 16:29:21 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/04 18:05:13 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "Contact.hpp"
 #include <iomanip>
+#include "Contact.hpp"
 
 class PhoneBook
 {
