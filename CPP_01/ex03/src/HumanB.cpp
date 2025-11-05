@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 11:32:23 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 12:21:40 by rshin            ###   ########lyon.fr   */
+/*   Created: 2025/11/05 17:14:04 by rshin             #+#    #+#             */
+/*   Updated: 2025/11/05 19:19:28 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie()
+HumanB::HumanB(std::string name) : _name(name)
 {
-	std::cout << "[Zombie]Constructor Called" << std::endl;
+	std::cout << "[" << this->_name << ']' << "Constructor called" << std::endl;
 }
 
-Zombie::~Zombie()
+HumanB::~HumanB()
 {
-	std::cout << "[Zombie]Destructor Called" << std::endl;
+	std::cout << "[" << _name << "]" << "Destructor called" << std::endl;
 }
 
-void	Zombie::announce()
+void	HumanB::attack()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << _name << "attacks with their" << _weapon.getType() << std::endl;
 }
 
-void	Zombie::setZombieName(std::string zombieName)
+void	HumanB::setWeapon(Weapon weapon)
 {
-	name = zombieName;
+	this->_weapon.setType(weapon.getType());
 }

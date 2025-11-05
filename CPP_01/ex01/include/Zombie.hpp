@@ -5,23 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 11:28:13 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 11:48:53 by rshin            ###   ########lyon.fr   */
+/*   Created: 2025/11/05 13:37:04 by rshin             #+#    #+#             */
+/*   Updated: 2025/11/05 14:26:22 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef ZOMBIE_HPP
 
-class Zombie
+# define ZOMBIE_HPP
+
+#include <iostream>
+#include <string>
+
+class	Zombie
 {
 	public:
 		Zombie();
 		~Zombie();
+		void setZombieName(std::string name);
 		void announce();
-		void setZombie();
-		std::string getZombie();
 
 	private:
 		std::string	name;
-}
+};
+
+Zombie* zombieHorde(int N, std::string name);
+
+#endif

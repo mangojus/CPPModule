@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 11:32:23 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 12:21:40 by rshin            ###   ########lyon.fr   */
+/*   Created: 2025/11/05 17:04:15 by rshin             #+#    #+#             */
+/*   Updated: 2025/11/05 19:19:52 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
 
-Zombie::Zombie()
-{
-	std::cout << "[Zombie]Constructor Called" << std::endl;
-}
+# define HUMANB_HPP
 
-Zombie::~Zombie()
-{
-	std::cout << "[Zombie]Destructor Called" << std::endl;
-}
+# include <string>
+# include <iostream>
+# include "Weapon.hpp"
 
-void	Zombie::announce()
+class HumanB
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void attack();
+		void setWeapon(Weapon weapon);
 
-void	Zombie::setZombieName(std::string zombieName)
-{
-	name = zombieName;
-}
+	private:
+		std::string	_name;
+		Weapon		_weapon;
+};
+
+#endif

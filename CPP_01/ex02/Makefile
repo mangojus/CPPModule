@@ -6,11 +6,11 @@
 #    By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 16:37:12 by rshin             #+#    #+#              #
-#    Updated: 2025/11/04 18:17:24 by rshin            ###   ########lyon.fr    #
+#    Updated: 2025/11/05 14:30:10 by rshin            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = prog
+NAME = brainfreeze
 
 # CONFIG
 
@@ -18,32 +18,21 @@ CC = c++
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-IFLAGS = -I $(INC) -MMD -MP 
-
 # PATHING
 
-SRC_DIR = src
+SRC = main.cpp
 
-BLD_DIR = .build
-
-INC = include
-
-SRC = $(SRC_DIR)/main.cpp
-
-OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(BLD_DIR)/%.o, $(SRC))
-
-DEP = $(patsubst $(SRC_DIR)/%.cpp, $(BLD_DIR)/%.d, $(SRC))
+OBJ = main.o
 
 # TARGET RULES
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(IFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-$(BLD_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile
-	mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) $(IFLAGS) -c $< -o $@
+$%.o: %.cpp Makefile
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)
@@ -52,7 +41,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
--include $(DEP)
 
 .PHONY: all clean fclean re

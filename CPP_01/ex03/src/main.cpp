@@ -6,11 +6,30 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:16:43 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/04 18:16:53 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 18:52:34 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
+
 int main()
 {
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }

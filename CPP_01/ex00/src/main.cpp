@@ -6,19 +6,19 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:16:43 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 11:59:50 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 13:35:21 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 
 int main()
 {
-	Zombie* newZombie;	
+	Zombie* walker;	
 
-	newZombie = newZombie("Scrawny");
+	walker = newZombie("Scrawny");
 	randomChump("Fungi");
-	newZombie::announce();
-	newZombie::~Zombie();
+	walker->announce();
+	delete (walker);
 	return (0);
 }

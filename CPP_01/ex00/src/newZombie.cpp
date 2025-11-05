@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:43:14 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 11:56:27 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 12:22:48 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 Zombie* newZombie(std::string name)
 {
-	Zombie* newZombie;
+	Zombie* walker;
 
-	newZombie::setZombieName(name);
-	return (newZombie)
+	walker = new Zombie();
+	walker->setZombieName(name);
+	return (walker);
 }
