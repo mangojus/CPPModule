@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:16:43 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 11:59:50 by rshin            ###   ########lyon.fr   */
+/*   Created: 2025/11/05 11:28:13 by rshin             #+#    #+#             */
+/*   Updated: 2025/11/05 11:48:53 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include <string>
+#include <iostream>
 
-int main()
+class Zombie
 {
-	Zombie* newZombie;	
+	public:
+		Zombie();
+		~Zombie();
+		void announce();
+		void setZombie();
+		std::string getZombie();
 
-	newZombie = newZombie("Scrawny");
-	randomChump("Fungi");
-	newZombie::announce();
-	newZombie::~Zombie();
-	return (0);
+	private:
+		std::string	name;
 }

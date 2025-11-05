@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:16:43 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 11:59:50 by rshin            ###   ########lyon.fr   */
+/*   Created: 2025/11/05 11:54:44 by rshin             #+#    #+#             */
+/*   Updated: 2025/11/05 11:56:15 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 
-int main()
+void	randomChump(std::string name)
 {
-	Zombie* newZombie;	
+	Zombie newZombie;
 
-	newZombie = newZombie("Scrawny");
-	randomChump("Fungi");
+	newZombie::setZombieName(name);
 	newZombie::announce();
-	newZombie::~Zombie();
-	return (0);
 }
