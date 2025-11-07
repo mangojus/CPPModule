@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:47:54 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 19:18:23 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/07 12:42:38 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 		Weapon(std::string type);
 		~Weapon();
 		void			 	setType(std::string type);
-		const std::string&	getType();
+		const std::string	getType();
 
 	private:
 		std::string	_type;

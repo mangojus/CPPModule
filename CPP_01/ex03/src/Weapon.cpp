@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:54:39 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 19:17:36 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/07 12:43:34 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void Weapon::setType(std::string type)
 	_type = type;
 }
 
-std::string	Weapon::getType()
+const std::string	Weapon::getType()
 {
 	return (_type);
 }

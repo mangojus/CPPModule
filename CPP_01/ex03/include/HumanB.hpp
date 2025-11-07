@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:04:15 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/05 19:19:52 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/07 12:32:20 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ class HumanB
 		HumanB(std::string name);
 		~HumanB();
 		void attack();
-		void setWeapon(Weapon weapon);
+		void setWeapon(Weapon& weapon);
+		void setName(std::string name);
 
 	private:
 		std::string	_name;
-		Weapon		_weapon;
+		Weapon*		_weapon;
 };
 
 #endif
