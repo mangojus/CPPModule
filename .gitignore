@@ -1,3 +1,6 @@
-*.build
-*a.out
+.build
 *.swp
+foo.c
+bar.c
+a.out
+file

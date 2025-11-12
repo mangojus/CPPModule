@@ -6,11 +6,11 @@
 #    By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 16:37:12 by rshin             #+#    #+#              #
-#    Updated: 2025/11/04 18:17:24 by rshin            ###   ########lyon.fr    #
+#    Updated: 2025/11/12 14:39:40 by rshin            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = prog
+NAME = complain
 
 # CONFIG
 
@@ -28,7 +28,8 @@ BLD_DIR = .build
 
 INC = include
 
-SRC = $(SRC_DIR)/main.cpp
+SRC = $(SRC_DIR)/main.cpp \
+	  $(SRC_DIR)/Harl.cpp
 
 OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(BLD_DIR)/%.o, $(SRC))
 
