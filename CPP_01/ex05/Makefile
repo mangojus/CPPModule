@@ -6,7 +6,7 @@
 #    By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 16:37:12 by rshin             #+#    #+#              #
-#    Updated: 2025/11/12 14:39:40 by rshin            ###   ########lyon.fr    #
+#    Updated: 2025/11/13 17:21:18 by rshin            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = complain
 
 CC = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 IFLAGS = -I $(INC) -MMD -MP 
 

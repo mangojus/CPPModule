@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:40:37 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/12 15:25:59 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/13 17:27:18 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,16 @@ class Harl
 		void info();
 		void warning();
 		void error();
-		
+		enum hashLevel
+		{
+			DEBUG = 210670746764,
+			INFO = 6384151633,
+			WARNING = 229444843303835,
+			ERROR = 210672417103
+		};
+		typedef void (Harl::*complainFunc)();
+		complainFunc getComplainFunc(std::string level);
+		unsigned long hash(const std::string str);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rshin <rshin@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:40:13 by rshin             #+#    #+#             */
-/*   Updated: 2025/11/12 17:17:41 by rshin            ###   ########lyon.fr   */
+/*   Updated: 2025/11/13 17:27:58 by rshin            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,38 @@ void Harl::error()
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+unsigned long Harl::hash(std::string str)
+{
+	unsigned long hash = 5381;
+
+	for (size_t i = 0; i < str.size(); ++i)
+		hash = ((hash << 5) + hash) + (int)str[i];
+	return (hash);
+}
+
+Harl::complainFunc Harl::getComplainFunc(std::string level)
+{
+/*	std::string s1 = "DEBUG";
+	std::string s2 = "INFO";
+	std::string s3 = "WARNING";
+	std::string s4 = "ERROR";
+	std::cout << hash(s1) << std::endl;
+	std::cout << hash(s2) << std::endl;
+	std::cout << hash(s3) << std::endl;
+	std::cout << hash(s4) << std::endl;*/
+	switch (hash(level))
+	{
+		case DEBUG: return &Harl::debug;
+		case INFO: return &Harl::info;
+		case WARNING: return &Harl::warning;
+		case ERROR: return &Harl::error;
+		default: return NULL;
+	}
+}
+
 void Harl::complain(std::string level)
 {
-	switch (level)
-	{
-		case (level == "DEBUG")
-		{
-			debug();
-			break;
-		}
-		case (level == "INFO")
-		{
-			info();
-			break;
-		}
-		case (level == "WARNING")
-		{
-			warning();
-			break;
-		}
-		case (level == "ERROR")
-		{
-			error();
-			break;
-		}
-	}
-	return;
+	complainFunc f = getComplainFunc(level);
+	if (f)
+		(this->*f)();
 }
